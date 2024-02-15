@@ -52,6 +52,20 @@ export default function HomeScreen({ navigation }) {
         image: require("../assets/image/google-pixel.jpg"),
         link: "GooglePixel5",
       },
+      {
+        id: 5,
+        title: "Google Pixel 5",
+        price: "3.100.00",
+        image: require("../assets/image/google-pixel.jpg"),
+        link: "GooglePixel5",
+      },
+      {
+        id: 6,
+        title: "Google Pixel 5",
+        price: "3.100.00",
+        image: require("../assets/image/google-pixel.jpg"),
+        link: "GooglePixel5",
+      },
     ],
   };
   return (
