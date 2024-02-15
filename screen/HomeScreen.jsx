@@ -11,8 +11,9 @@ import {
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import * as Icons from "react-native-heroicons/micro";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   function padding(a, b, c, d) {
     return {
       paddingTop: a,
@@ -28,28 +29,28 @@ export default function HomeScreen() {
         title: "Sepatu Adidas",
         price: "1.350.000",
         image: require("../assets/image/sepatu.jpg"),
-        link: "/detail",
+        link: "SepatuAdidas",
       },
       {
         id: 2,
         title: "Baju Batik",
         price: "450.000",
         image: require("../assets/image/batik.jpg"),
-        link: "/detail",
+        link: "BajuBatik",
       },
       {
         id: 3,
         title: "Macbook Air M1",
         price: "11.616.000",
         image: require("../assets/image/macbook.jpg"),
-        link: "/detail",
+        link: "MacbookAirM1",
       },
       {
         id: 4,
         title: "Google Pixel 5",
         price: "3.100.00",
         image: require("../assets/image/google-pixel.jpg"),
-        link: "/detail",
+        link: "GooglePixel5",
       },
     ],
   };
@@ -58,7 +59,7 @@ export default function HomeScreen() {
       <View style={styles.container}>
         <View style={styles.containerMenu}>
           <Text style={{ color: "white", fontWeight: "800", fontSize: 30 }}>
-            Marketplace
+            Toko Online
           </Text>
         </View>
         <View style={styles.container}>
@@ -86,23 +87,30 @@ export default function HomeScreen() {
                       alignItems: "center",
                       marginTop: 5,
                     }}
+                    onPress={() => navigation.navigate(data.link)}
                   >
                     <Text
                       style={{
                         backgroundColor: "#1e1f20",
-                        color: "white",
                         padding: 10,
                         ...padding(10, 65),
                         borderRadius: 5,
+                        color: "white",
+                        alignItems: "center",
+                        gap: 10,
                       }}
                     >
-                      Buy
+                      <Icons.ArrowDownCircleIcon
+                        style={{ marginLeft: 10 }}
+                        color="white"
+                        size={15}
+                      />
                     </Text>
                   </TouchableOpacity>
                 </View>
               </View>
             ))}
-          <Text>Create by @rafia9005</Text>
+            <Text>Create by @rafia9005</Text>
           </View>
         </ScrollView>
       </View>
